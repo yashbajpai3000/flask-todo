@@ -11,7 +11,7 @@ class UserFieldsMixin(object):
     fields = {"username": fields.String}
 
 class Session(UserFieldsMixin, Resource):
-    def marshal(self, user):
+    def marshal( user):
         try:
             user = user._get_current_object() # marshal() has issues with serializing flask's proxied objects
         except AttributeError:
